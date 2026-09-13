@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIverter.MainPage"
+             BackgroundColor="#1a0533">
+
+    <ContentPage.Resources>
+        <Style x:Key="HeaderLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="CategoryLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="End"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Header -->
+        <Label Text="- MAUIVERTER -"
+               Style="{StaticResource HeaderLabel}"
+               Margin="0,40,0,20"/>
+
+        <!-- Grid Background with gradient -->
+        <Grid Grid.Row="1"
+              RowDefinitions="*,*,*"
+              ColumnDefinitions="*,*,*"
+              ColumnSpacing="4"
+              RowSpacing="4"
+              Padding="4">
+
+            <!-- Row 0 -->
+            <Border Grid.Row="0" Grid.Column="0"
+                    BackgroundColor="#2d1055"
+                    StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                           TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Label Text="Information" Style="{StaticResource CategoryLabel}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="1"
+                    BackgroundColor="#2d1055"
+                    StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                           TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Label Text="Volume" Style="{StaticResource CategoryLabel}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="2"
+                    BackgroundColor="#2d1055"
+                    StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                           TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Label Text="Length" Style="{StaticResource CategoryLabel}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Row 1 -->
+            <Border Grid.Row="1" Grid.Column="0"
+                    BackgroundColor="#2d1055"
+                    StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                           TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Label Text="Mass" Style="{StaticResource CategoryLabel}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="1"
+                    BackgroundColor="#2d1055"
+                    StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                           TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Label Text="Temperature" Style="{StaticResource CategoryLabel}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="2"
+                    BackgroundColor="#2d1055"
+                    StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                           TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Label Text="Energy" Style="{StaticResource CategoryLabel}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Row 2 -->
+            <Border Grid.Row="2" Grid.Column="0"
+                    BackgroundColor="#2d1055"
+                    StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                           TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Label Text="Area" Style="{StaticResource CategoryLabel}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Grid.Row="2" Grid.Column="1"
+                    BackgroundColor="#2d1055"
+                    StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                           TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Label Text="Speed" Style="{StaticResource CategoryLabel}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Grid.Row="2" Grid.Column="2"
+                    BackgroundColor="#2d1055"
+                    StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                           TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Label Text="Duration" Style="{StaticResource CategoryLabel}"/>
+                </VerticalStackLayout>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>
