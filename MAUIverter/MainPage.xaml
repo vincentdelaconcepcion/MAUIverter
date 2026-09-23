@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUIverter.MainPage"
-             BackgroundColor="#1a0533">
+             BackgroundColor="#FF0BDC0B">
 
     <ContentPage.Resources>
         <Style x:Key="HeaderLabel" TargetType="Label">
@@ -20,7 +20,7 @@
             <Setter Property="VerticalTextAlignment" Value="End"/>
         </Style>
     </ContentPage.Resources>
-
+    
     <Grid RowDefinitions="Auto,*">
 
         <!-- Header -->
@@ -38,8 +38,10 @@
 
             <!-- Row 0 -->
             <Border Grid.Row="0" Grid.Column="0"
-                    BackgroundColor="#2d1055"
-                    StrokeShape="RoundRectangle 8">
+                    BackgroundColor="#FFE4FF17"
+                    StrokeShape="RoundRectangle 8"
+                    
+                    >
                 <VerticalStackLayout VerticalOptions="Center" Spacing="8">
                     <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
                            TextColor="White" HorizontalTextAlignment="Center"/>
@@ -48,7 +50,7 @@
             </Border>
 
             <Border Grid.Row="0" Grid.Column="1"
-                    BackgroundColor="#2d1055"
+                    BackgroundColor="Red"
                     StrokeShape="RoundRectangle 8">
                 <VerticalStackLayout VerticalOptions="Center" Spacing="8">
                     <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
@@ -58,7 +60,7 @@
             </Border>
 
             <Border Grid.Row="0" Grid.Column="2"
-                    BackgroundColor="#2d1055"
+                    BackgroundColor="blue"
                     StrokeShape="RoundRectangle 8">
                 <VerticalStackLayout VerticalOptions="Center" Spacing="8">
                     <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
@@ -69,7 +71,7 @@
 
             <!-- Row 1 -->
             <Border Grid.Row="1" Grid.Column="0"
-                    BackgroundColor="#2d1055"
+                    BackgroundColor="Yellow"
                     StrokeShape="RoundRectangle 8">
                 <VerticalStackLayout VerticalOptions="Center" Spacing="8">
                     <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
@@ -79,7 +81,7 @@
             </Border>
 
             <Border Grid.Row="1" Grid.Column="1"
-                    BackgroundColor="#2d1055"
+                    BackgroundColor="Red"
                     StrokeShape="RoundRectangle 8">
                 <VerticalStackLayout VerticalOptions="Center" Spacing="8">
                     <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
@@ -89,7 +91,7 @@
             </Border>
 
             <Border Grid.Row="1" Grid.Column="2"
-                    BackgroundColor="#2d1055"
+                    BackgroundColor="Blue"
                     StrokeShape="RoundRectangle 8">
                 <VerticalStackLayout VerticalOptions="Center" Spacing="8">
                     <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
@@ -100,7 +102,7 @@
 
             <!-- Row 2 -->
             <Border Grid.Row="2" Grid.Column="0"
-                    BackgroundColor="#2d1055"
+                    BackgroundColor="Yellow"
                     StrokeShape="RoundRectangle 8">
                 <VerticalStackLayout VerticalOptions="Center" Spacing="8">
                     <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
@@ -110,7 +112,7 @@
             </Border>
 
             <Border Grid.Row="2" Grid.Column="1"
-                    BackgroundColor="#2d1055"
+                    BackgroundColor="Red"
                     StrokeShape="RoundRectangle 8">
                 <VerticalStackLayout VerticalOptions="Center" Spacing="8">
                     <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
@@ -120,7 +122,7 @@
             </Border>
 
             <Border Grid.Row="2" Grid.Column="2"
-                    BackgroundColor="#2d1055"
+                    BackgroundColor="Blue"
                     StrokeShape="RoundRectangle 8">
                 <VerticalStackLayout VerticalOptions="Center" Spacing="8">
                     <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
