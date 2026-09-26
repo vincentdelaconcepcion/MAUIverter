@@ -19,6 +19,12 @@
             <Setter Property="HorizontalTextAlignment" Value="Center"/>
             <Setter Property="VerticalTextAlignment" Value="End"/>
         </Style>
+
+        <Style x:Key="TileButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="BorderWidth" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
     </ContentPage.Resources>
     
     <Grid RowDefinitions="Auto,*">
@@ -37,104 +43,124 @@
               Padding="4">
 
             <!-- Row 0 -->
-            <Border Grid.Row="0" Grid.Column="0"
-                    BackgroundColor="#FFE4FF17"
-                    StrokeShape="RoundRectangle 8"
-                    
-                    >
-                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
-                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
-                           TextColor="White" HorizontalTextAlignment="Center"/>
-                    <Label Text="Information" Style="{StaticResource CategoryLabel}"/>
-                </VerticalStackLayout>
-            </Border>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Border BackgroundColor="#FFE4FF17" StrokeShape="RoundRectangle 8">
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                        <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                               TextColor="White" HorizontalTextAlignment="Center"/>
+                        <Label Text="Information" Style="{StaticResource CategoryLabel}"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Button Style="{StaticResource TileButton}"
+                        SemanticProperties.Description="Information"
+                        Clicked="OnInformationClicked"/>
+            </Grid>
 
-            <Border Grid.Row="0" Grid.Column="1"
-                    BackgroundColor="Red"
-                    StrokeShape="RoundRectangle 8">
-                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
-                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
-                           TextColor="White" HorizontalTextAlignment="Center"/>
-                    <Label Text="Volume" Style="{StaticResource CategoryLabel}"/>
-                </VerticalStackLayout>
-            </Border>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Border BackgroundColor="Red" StrokeShape="RoundRectangle 8">
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                        <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                               TextColor="White" HorizontalTextAlignment="Center"/>
+                        <Label Text="Volume" Style="{StaticResource CategoryLabel}"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Button Style="{StaticResource TileButton}"
+                        SemanticProperties.Description="Volume"
+                        Clicked="OnVolumeClicked"/>
+            </Grid>
 
-            <Border Grid.Row="0" Grid.Column="2"
-                    BackgroundColor="blue"
-                    StrokeShape="RoundRectangle 8">
-                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
-                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
-                           TextColor="White" HorizontalTextAlignment="Center"/>
-                    <Label Text="Length" Style="{StaticResource CategoryLabel}"/>
-                </VerticalStackLayout>
-            </Border>
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Border BackgroundColor="blue" StrokeShape="RoundRectangle 8">
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                        <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                               TextColor="White" HorizontalTextAlignment="Center"/>
+                        <Label Text="Length" Style="{StaticResource CategoryLabel}"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Button Style="{StaticResource TileButton}"
+                        SemanticProperties.Description="Length"
+                        Clicked="OnLengthClicked"/>
+            </Grid>
 
             <!-- Row 1 -->
-            <Border Grid.Row="1" Grid.Column="0"
-                    BackgroundColor="Yellow"
-                    StrokeShape="RoundRectangle 8">
-                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
-                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
-                           TextColor="White" HorizontalTextAlignment="Center"/>
-                    <Label Text="Mass" Style="{StaticResource CategoryLabel}"/>
-                    
-                    <Button x:Name="SfButton"
-                            Text="Button"
-                            WidthRequest="100"
-                            HeightRequest="50"/>
-                </VerticalStackLayout>
-            </Border>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Border BackgroundColor="Yellow" StrokeShape="RoundRectangle 8">
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                        <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                               TextColor="White" HorizontalTextAlignment="Center"/>
+                        <Label Text="Mass" Style="{StaticResource CategoryLabel}"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Button Style="{StaticResource TileButton}"
+                        SemanticProperties.Description="Mass"
+                        Clicked="OnMassClicked"/>
+            </Grid>
 
-            <Border Grid.Row="1" Grid.Column="1"
-                    BackgroundColor="Red"
-                    StrokeShape="RoundRectangle 8">
-                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
-                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
-                           TextColor="White" HorizontalTextAlignment="Center"/>
-                    <Label Text="Temperature" Style="{StaticResource CategoryLabel}"/>
-                </VerticalStackLayout>
-            </Border>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Border BackgroundColor="Red" StrokeShape="RoundRectangle 8">
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                        <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                               TextColor="White" HorizontalTextAlignment="Center"/>
+                        <Label Text="Temperature" Style="{StaticResource CategoryLabel}"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Button Style="{StaticResource TileButton}"
+                        SemanticProperties.Description="Temperature"
+                        Clicked="OnTemperatureClicked"/>
+            </Grid>
 
-            <Border Grid.Row="1" Grid.Column="2"
-                    BackgroundColor="Blue"
-                    StrokeShape="RoundRectangle 8">
-                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
-                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
-                           TextColor="White" HorizontalTextAlignment="Center"/>
-                    <Label Text="Energy" Style="{StaticResource CategoryLabel}"/>
-                </VerticalStackLayout>
-            </Border>
+            <Grid Grid.Row="1" Grid.Column="2">
+                <Border BackgroundColor="Blue" StrokeShape="RoundRectangle 8">
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                        <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                               TextColor="White" HorizontalTextAlignment="Center"/>
+                        <Label Text="Energy" Style="{StaticResource CategoryLabel}"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Button Style="{StaticResource TileButton}"
+                        SemanticProperties.Description="Energy"
+                        Clicked="OnEnergyClicked"/>
+            </Grid>
 
             <!-- Row 2 -->
-            <Border Grid.Row="2" Grid.Column="0"
-                    BackgroundColor="Yellow"
-                    StrokeShape="RoundRectangle 8">
-                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
-                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
-                           TextColor="White" HorizontalTextAlignment="Center"/>
-                    <Label Text="Area" Style="{StaticResource CategoryLabel}"/>
-                </VerticalStackLayout>
-            </Border>
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Border BackgroundColor="Yellow" StrokeShape="RoundRectangle 8">
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                        <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                               TextColor="White" HorizontalTextAlignment="Center"/>
+                        <Label Text="Area" Style="{StaticResource CategoryLabel}"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Button Style="{StaticResource TileButton}"
+                        SemanticProperties.Description="Area"
+                        Clicked="OnAreaClicked"/>
+            </Grid>
 
-            <Border Grid.Row="2" Grid.Column="1"
-                    BackgroundColor="Red"
-                    StrokeShape="RoundRectangle 8">
-                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
-                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
-                           TextColor="White" HorizontalTextAlignment="Center"/>
-                    <Label Text="Speed" Style="{StaticResource CategoryLabel}"/>
-                </VerticalStackLayout>
-            </Border>
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Border BackgroundColor="Red" StrokeShape="RoundRectangle 8">
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                        <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                               TextColor="White" HorizontalTextAlignment="Center"/>
+                        <Label Text="Speed" Style="{StaticResource CategoryLabel}"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Button Style="{StaticResource TileButton}"
+                        SemanticProperties.Description="Speed"
+                        Clicked="OnSpeedClicked"/>
+            </Grid>
 
-            <Border Grid.Row="2" Grid.Column="2"
-                    BackgroundColor="Blue"
-                    StrokeShape="RoundRectangle 8">
-                <VerticalStackLayout VerticalOptions="Center" Spacing="8">
-                    <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
-                           TextColor="White" HorizontalTextAlignment="Center"/>
-                    <Label Text="Duration" Style="{StaticResource CategoryLabel}"/>
-                </VerticalStackLayout>
-            </Border>
+            <Grid Grid.Row="2" Grid.Column="2">
+                <Border BackgroundColor="Blue" StrokeShape="RoundRectangle 8">
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                        <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
+                               TextColor="White" HorizontalTextAlignment="Center"/>
+                        <Label Text="Duration" Style="{StaticResource CategoryLabel}"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Button Style="{StaticResource TileButton}"
+                        SemanticProperties.Description="Duration"
+                        Clicked="OnDurationClicked"/>
+            </Grid>
 
         </Grid>
 

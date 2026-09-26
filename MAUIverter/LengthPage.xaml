@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIverter.LengthPage"
+             Title="Length">
+    <VerticalStackLayout Padding="24"
+                         Spacing="16"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+        <Label Text="Length"
+               FontSize="32"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+        <Label Text="Length converter"
+               FontSize="16"
+               HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentPage>
