@@ -16,16 +16,19 @@ namespace MAUIverter
             ValueEntry.Text = "1";
         }
 
-        private void OnConvertClicked(object? sender, EventArgs e)
-            => UpdateResult();
-
         private void OnValueTextChanged(object? sender, TextChangedEventArgs e)
             => UpdateResult();
 
         private void OnUnitChanged(object? sender, EventArgs e)
             => UpdateResult();
 
-        private void OnSwapClicked(object? sender, EventArgs e)
+        private async void OnConvertClicked(object? sender, EventArgs e)
+        {
+            UpdateResult();
+            await PopResultAsync();
+        }
+
+        private async void OnSwapClicked(object? sender, EventArgs e)
         {
             if (FromPicker.SelectedIndex < 0 || ToPicker.SelectedIndex < 0)
                 return;
@@ -35,6 +38,14 @@ namespace MAUIverter
             ToPicker.SelectedIndex = fromIndex;
 
             UpdateResult();
+            await PopResultAsync();
+        }
+
+        private async Task PopResultAsync()
+        {
+            await ResultCard.FadeToAsync(0, 90);
+            await ResultCard.ScaleToAsync(0.94, 90);
+            await Task.WhenAll(ResultCard.FadeToAsync(1, 130), ResultCard.ScaleToAsync(1, 130));
         }
 
         private void UpdateResult()
@@ -48,7 +59,7 @@ namespace MAUIverter
             if (!double.TryParse(ValueEntry.Text, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.CurrentCulture, out double value))
             {
                 ResultLabel.Text = "--";
-                EquationLabel.Text = "Enter a number to convert";
+                EquationLabel.Text = "Type a number to convert!";
                 return;
             }
 
@@ -56,9 +67,21 @@ namespace MAUIverter
 
             ResultLabel.Text = Format(result);
             EquationLabel.Text = $"{Format(value)} {from.Name} = {Format(result)} {to.Name}";
+
+            UpdateSizeCheck(from, to);
+        }
+
+        private void UpdateSizeCheck(VolumeUnit from, VolumeUnit to)
+        {
+            double largest = Math.Max(from.Liters, to.Liters);
+
+            FromSizeLabel.Text = $"{from.Name} ({from.Symbol})";
+            ToSizeLabel.Text = $"{to.Name} ({to.Symbol})";
+            FromSizeBar.Progress = largest > 0 ? from.Liters / largest : 0;
+            ToSizeBar.Progress = largest > 0 ? to.Liters / largest : 0;
         }
 
         private static string Format(double value)
-            => value.ToString("G12", CultureInfo.CurrentCulture);
+            => value.ToString("G6", CultureInfo.CurrentCulture);
     }
 }
