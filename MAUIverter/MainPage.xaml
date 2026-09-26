@@ -77,6 +77,11 @@
                     <Label Text="&#xe707;" FontFamily="Segoe MDL2 Assets" FontSize="48"
                            TextColor="White" HorizontalTextAlignment="Center"/>
                     <Label Text="Mass" Style="{StaticResource CategoryLabel}"/>
+                    
+                    <Button x:Name="SfButton"
+                            Text="Button"
+                            WidthRequest="100"
+                            HeightRequest="50"/>
                 </VerticalStackLayout>
             </Border>
 
