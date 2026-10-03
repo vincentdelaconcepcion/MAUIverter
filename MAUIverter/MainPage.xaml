@@ -30,8 +30,13 @@
 
         <Style x:Key="TileButton" TargetType="Button">
             <Setter Property="BackgroundColor" Value="Transparent"/>
-            <Setter Property="BorderWidth" Value="0"/>
+            <Setter Property="BorderWidth" Value="500"/>
             <Setter Property="Padding" Value="0"/>
+        </Style>
+
+        <Style x:Key="Size" TargetType="Grid">
+            <Setter Property="HeightRequest" Value="200"/>
+            <Setter Property="WidthRequest" Value="200"/>
         </Style>
     </ContentPage.Resources>
 
@@ -42,14 +47,14 @@
             <Label Text="Pick what you want to measure!" Style="{StaticResource SubHeaderLabel}"/>
         </VerticalStackLayout>
 
-        <Grid Grid.Row="1"
-              RowDefinitions="*,*,*"
-              ColumnDefinitions="*,*,*"
-              ColumnSpacing="10"
+        <ScrollView Grid.Row="1">
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+              ColumnDefinitions="*,*"
+              ColumnSpacing="30"
               RowSpacing="10"
-              Padding="14">
+              Padding="10">
 
-            <Grid Grid.Row="0" Grid.Column="0">
+            <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource Size}">
                 <Border BackgroundColor="#FF3B82F6" StrokeShape="RoundRectangle 22" Padding="6">
                     <VerticalStackLayout VerticalOptions="Center" Spacing="6">
                         <Label Text="&#xEDA2;" FontFamily="Segoe MDL2 Assets" FontSize="46"
@@ -62,7 +67,7 @@
                         Clicked="OnInformationClicked"/>
             </Grid>
 
-            <Grid Grid.Row="0" Grid.Column="1">
+            <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource Size}">
                 <Border BackgroundColor="#FF14B8A6" StrokeShape="RoundRectangle 22" Padding="6">
                     <VerticalStackLayout VerticalOptions="Center" Spacing="6">
                         <Label Text="&#xEB42;" FontFamily="Segoe MDL2 Assets" FontSize="46"
@@ -75,7 +80,7 @@
                         Clicked="OnVolumeClicked"/>
             </Grid>
 
-            <Grid Grid.Row="0" Grid.Column="2">
+            <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource Size}">
                 <Border BackgroundColor="#FF8B5CF6" StrokeShape="RoundRectangle 22" Padding="6">
                     <VerticalStackLayout VerticalOptions="Center" Spacing="6">
                         <Label Text="&#xED5E;" FontFamily="Segoe MDL2 Assets" FontSize="46"
@@ -88,7 +93,7 @@
                         Clicked="OnLengthClicked"/>
             </Grid>
 
-            <Grid Grid.Row="1" Grid.Column="0">
+            <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource Size}">
                 <Border BackgroundColor="#FFEA580C" StrokeShape="RoundRectangle 22" Padding="6">
                     <VerticalStackLayout VerticalOptions="Center" Spacing="6">
                         <Label Text="&#xE7B8;" FontFamily="Segoe MDL2 Assets" FontSize="46"
@@ -101,7 +106,7 @@
                         Clicked="OnMassClicked"/>
             </Grid>
 
-            <Grid Grid.Row="1" Grid.Column="1">
+            <Grid Grid.Row="2" Grid.Column="0" Style="{StaticResource Size}">
                 <Border BackgroundColor="#FFEF4444" StrokeShape="RoundRectangle 22" Padding="6">
                     <VerticalStackLayout VerticalOptions="Center" Spacing="6">
                         <Label Text="&#xEA80;" FontFamily="Segoe MDL2 Assets" FontSize="46"
@@ -114,7 +119,7 @@
                         Clicked="OnTemperatureClicked"/>
             </Grid>
 
-            <Grid Grid.Row="1" Grid.Column="2">
+            <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource Size}">
                 <Border BackgroundColor="#FFD97706" StrokeShape="RoundRectangle 22" Padding="6">
                     <VerticalStackLayout VerticalOptions="Center" Spacing="6">
                         <Label Text="&#xE945;" FontFamily="Segoe MDL2 Assets" FontSize="46"
@@ -127,7 +132,7 @@
                         Clicked="OnEnergyClicked"/>
             </Grid>
 
-            <Grid Grid.Row="2" Grid.Column="0">
+            <Grid Grid.Row="3" Grid.Column="0" Style="{StaticResource Size}">
                 <Border BackgroundColor="#FF10B981" StrokeShape="RoundRectangle 22" Padding="6">
                     <VerticalStackLayout VerticalOptions="Center" Spacing="6">
                         <Label Text="&#xF0E2;" FontFamily="Segoe MDL2 Assets" FontSize="46"
@@ -140,7 +145,7 @@
                         Clicked="OnAreaClicked"/>
             </Grid>
 
-            <Grid Grid.Row="2" Grid.Column="1">
+            <Grid Grid.Row="3" Grid.Column="1" Style="{StaticResource Size}">
                 <Border BackgroundColor="#FFEC4899" StrokeShape="RoundRectangle 22" Padding="6">
                     <VerticalStackLayout VerticalOptions="Center" Spacing="6">
                         <Label Text="&#xEC4A;" FontFamily="Segoe MDL2 Assets" FontSize="46"
@@ -153,7 +158,7 @@
                         Clicked="OnSpeedClicked"/>
             </Grid>
 
-            <Grid Grid.Row="2" Grid.Column="2">
+            <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Size}">
                 <Border BackgroundColor="#FF6366F1" StrokeShape="RoundRectangle 22" Padding="6">
                     <VerticalStackLayout VerticalOptions="Center" Spacing="6">
                         <Label Text="&#xE916;" FontFamily="Segoe MDL2 Assets" FontSize="46"
@@ -167,6 +172,7 @@
             </Grid>
 
         </Grid>
+        </ScrollView>
 
     </Grid>
 
