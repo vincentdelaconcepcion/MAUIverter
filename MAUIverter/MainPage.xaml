@@ -5,17 +5,18 @@
              BackgroundColor="#FFF4F6FB"
              Title="MAUIverter">
 
+    <!--Explicit Styles-->
     <ContentPage.Resources>
         <Style x:Key="HeaderLabel" TargetType="Label">
-            <Setter Property="TextColor" Value="#FF1F2933"/>
-            <Setter Property="FontSize" Value="34"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="28"/>
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="HorizontalTextAlignment" Value="Center"/>
         </Style>
 
         <Style x:Key="SubHeaderLabel" TargetType="Label">
-            <Setter Property="TextColor" Value="#FF52606D"/>
-            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="TextColor" Value="#CFC0F5"/>
+            <Setter Property="FontSize" Value="14"/>
             <Setter Property="HorizontalTextAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0,2,0,0"/>
         </Style>
@@ -40,140 +41,150 @@
         </Style>
     </ContentPage.Resources>
 
-    <Grid RowDefinitions="Auto,*">
+    <!--Single ScrollView so the header scrolls away with the tiles-->
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
 
-        <VerticalStackLayout Grid.Row="0" Margin="0,36,0,18" Spacing="0">
-            <Label Text="MAUIverter" Style="{StaticResource HeaderLabel}"/>
-            <Label Text="Pick what you want to measure!" Style="{StaticResource SubHeaderLabel}"/>
+            <!--Header Panel of the Main Menu-->
+            <Border Stroke="#C49B33"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10,0,0,10"
+                    Background="#2B0B98"
+                    Padding="10">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                    <Image Source="c.gif"/>
+                    <Label Text="MAUIverter" Style="{StaticResource HeaderLabel}"/>
+                    <Label Text="Pick what you want to measure!" Style="{StaticResource SubHeaderLabel}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!--Selection Panels-->
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                  ColumnDefinitions="*,*"
+                  ColumnSpacing="10"
+                  RowSpacing="10"
+                  Padding="10">
+
+                <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FF3B82F6" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Label Text="&#xEDA2;" FontFamily="Segoe MDL2 Assets" FontSize="46"
+                                   TextColor="White" HorizontalTextAlignment="Center"/>
+                            <Label Text="Information" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Information"
+                            Clicked="OnInformationClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FF14B8A6" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Label Text="&#xEB42;" FontFamily="Segoe MDL2 Assets" FontSize="46"
+                                   TextColor="White" HorizontalTextAlignment="Center"/>
+                            <Label Text="Volume" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Volume"
+                            Clicked="OnVolumeClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FF8B5CF6" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Label Text="&#xED5E;" FontFamily="Segoe MDL2 Assets" FontSize="46"
+                                   TextColor="White" HorizontalTextAlignment="Center"/>
+                            <Label Text="Length" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Length"
+                            Clicked="OnLengthClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FFEA580C" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Label Text="&#xE7B8;" FontFamily="Segoe MDL2 Assets" FontSize="46"
+                                   TextColor="White" HorizontalTextAlignment="Center"/>
+                            <Label Text="Mass" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Mass"
+                            Clicked="OnMassClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="0" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FFEF4444" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Label Text="&#xEA80;" FontFamily="Segoe MDL2 Assets" FontSize="46"
+                                   TextColor="White" HorizontalTextAlignment="Center"/>
+                            <Label Text="Temperature" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Temperature"
+                            Clicked="OnTemperatureClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FFD97706" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Label Text="&#xE945;" FontFamily="Segoe MDL2 Assets" FontSize="46"
+                                   TextColor="White" HorizontalTextAlignment="Center"/>
+                            <Label Text="Energy" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Energy"
+                            Clicked="OnEnergyClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="3" Grid.Column="0" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FF10B981" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Label Text="&#xF0E2;" FontFamily="Segoe MDL2 Assets" FontSize="46"
+                                   TextColor="White" HorizontalTextAlignment="Center"/>
+                            <Label Text="Area" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Area"
+                            Clicked="OnAreaClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="3" Grid.Column="1" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FFEC4899" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Label Text="&#xEC4A;" FontFamily="Segoe MDL2 Assets" FontSize="46"
+                                   TextColor="White" HorizontalTextAlignment="Center"/>
+                            <Label Text="Speed" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Speed"
+                            Clicked="OnSpeedClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FF6366F1" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Label Text="&#xE916;" FontFamily="Segoe MDL2 Assets" FontSize="46"
+                                   TextColor="White" HorizontalTextAlignment="Center"/>
+                            <Label Text="Duration" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Duration"
+                            Clicked="OnDurationClicked"/>
+                </Grid>
+
+            </Grid>
+
         </VerticalStackLayout>
-
-        <ScrollView Grid.Row="1">
-        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
-              ColumnDefinitions="*,*"
-              ColumnSpacing="30"
-              RowSpacing="10"
-              Padding="10">
-
-            <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource Size}">
-                <Border BackgroundColor="#FF3B82F6" StrokeShape="RoundRectangle 22" Padding="6">
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                        <Label Text="&#xEDA2;" FontFamily="Segoe MDL2 Assets" FontSize="46"
-                               TextColor="White" HorizontalTextAlignment="Center"/>
-                        <Label Text="Information" Style="{StaticResource CategoryLabel}"/>
-                    </VerticalStackLayout>
-                </Border>
-                <Button Style="{StaticResource TileButton}"
-                        SemanticProperties.Description="Information"
-                        Clicked="OnInformationClicked"/>
-            </Grid>
-
-            <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource Size}">
-                <Border BackgroundColor="#FF14B8A6" StrokeShape="RoundRectangle 22" Padding="6">
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                        <Label Text="&#xEB42;" FontFamily="Segoe MDL2 Assets" FontSize="46"
-                               TextColor="White" HorizontalTextAlignment="Center"/>
-                        <Label Text="Volume" Style="{StaticResource CategoryLabel}"/>
-                    </VerticalStackLayout>
-                </Border>
-                <Button Style="{StaticResource TileButton}"
-                        SemanticProperties.Description="Volume"
-                        Clicked="OnVolumeClicked"/>
-            </Grid>
-
-            <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource Size}">
-                <Border BackgroundColor="#FF8B5CF6" StrokeShape="RoundRectangle 22" Padding="6">
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                        <Label Text="&#xED5E;" FontFamily="Segoe MDL2 Assets" FontSize="46"
-                               TextColor="White" HorizontalTextAlignment="Center"/>
-                        <Label Text="Length" Style="{StaticResource CategoryLabel}"/>
-                    </VerticalStackLayout>
-                </Border>
-                <Button Style="{StaticResource TileButton}"
-                        SemanticProperties.Description="Length"
-                        Clicked="OnLengthClicked"/>
-            </Grid>
-
-            <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource Size}">
-                <Border BackgroundColor="#FFEA580C" StrokeShape="RoundRectangle 22" Padding="6">
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                        <Label Text="&#xE7B8;" FontFamily="Segoe MDL2 Assets" FontSize="46"
-                               TextColor="White" HorizontalTextAlignment="Center"/>
-                        <Label Text="Mass" Style="{StaticResource CategoryLabel}"/>
-                    </VerticalStackLayout>
-                </Border>
-                <Button Style="{StaticResource TileButton}"
-                        SemanticProperties.Description="Mass"
-                        Clicked="OnMassClicked"/>
-            </Grid>
-
-            <Grid Grid.Row="2" Grid.Column="0" Style="{StaticResource Size}">
-                <Border BackgroundColor="#FFEF4444" StrokeShape="RoundRectangle 22" Padding="6">
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                        <Label Text="&#xEA80;" FontFamily="Segoe MDL2 Assets" FontSize="46"
-                               TextColor="White" HorizontalTextAlignment="Center"/>
-                        <Label Text="Temperature" Style="{StaticResource CategoryLabel}"/>
-                    </VerticalStackLayout>
-                </Border>
-                <Button Style="{StaticResource TileButton}"
-                        SemanticProperties.Description="Temperature"
-                        Clicked="OnTemperatureClicked"/>
-            </Grid>
-
-            <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource Size}">
-                <Border BackgroundColor="#FFD97706" StrokeShape="RoundRectangle 22" Padding="6">
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                        <Label Text="&#xE945;" FontFamily="Segoe MDL2 Assets" FontSize="46"
-                               TextColor="White" HorizontalTextAlignment="Center"/>
-                        <Label Text="Energy" Style="{StaticResource CategoryLabel}"/>
-                    </VerticalStackLayout>
-                </Border>
-                <Button Style="{StaticResource TileButton}"
-                        SemanticProperties.Description="Energy"
-                        Clicked="OnEnergyClicked"/>
-            </Grid>
-
-            <Grid Grid.Row="3" Grid.Column="0" Style="{StaticResource Size}">
-                <Border BackgroundColor="#FF10B981" StrokeShape="RoundRectangle 22" Padding="6">
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                        <Label Text="&#xF0E2;" FontFamily="Segoe MDL2 Assets" FontSize="46"
-                               TextColor="White" HorizontalTextAlignment="Center"/>
-                        <Label Text="Area" Style="{StaticResource CategoryLabel}"/>
-                    </VerticalStackLayout>
-                </Border>
-                <Button Style="{StaticResource TileButton}"
-                        SemanticProperties.Description="Area"
-                        Clicked="OnAreaClicked"/>
-            </Grid>
-
-            <Grid Grid.Row="3" Grid.Column="1" Style="{StaticResource Size}">
-                <Border BackgroundColor="#FFEC4899" StrokeShape="RoundRectangle 22" Padding="6">
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                        <Label Text="&#xEC4A;" FontFamily="Segoe MDL2 Assets" FontSize="46"
-                               TextColor="White" HorizontalTextAlignment="Center"/>
-                        <Label Text="Speed" Style="{StaticResource CategoryLabel}"/>
-                    </VerticalStackLayout>
-                </Border>
-                <Button Style="{StaticResource TileButton}"
-                        SemanticProperties.Description="Speed"
-                        Clicked="OnSpeedClicked"/>
-            </Grid>
-
-            <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Size}">
-                <Border BackgroundColor="#FF6366F1" StrokeShape="RoundRectangle 22" Padding="6">
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                        <Label Text="&#xE916;" FontFamily="Segoe MDL2 Assets" FontSize="46"
-                               TextColor="White" HorizontalTextAlignment="Center"/>
-                        <Label Text="Duration" Style="{StaticResource CategoryLabel}"/>
-                    </VerticalStackLayout>
-                </Border>
-                <Button Style="{StaticResource TileButton}"
-                        SemanticProperties.Description="Duration"
-                        Clicked="OnDurationClicked"/>
-            </Grid>
-
-        </Grid>
-        </ScrollView>
-
-    </Grid>
+    </ScrollView>
 
 </ContentPage>

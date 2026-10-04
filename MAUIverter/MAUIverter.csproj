@@ -57,6 +57,10 @@
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+		<MauiImage Remove="Resources\Images\c.gif" />
+		<!-- calculator.gif must keep its exact filename, so keep it out of MauiImage
+		     (which rewrites it to calculator.scale-100.gif on Windows) and add it as an asset. -->
+		<MauiAsset Include="Resources\Images\c.gif" LogicalName="calculator.gif" />
 		
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
