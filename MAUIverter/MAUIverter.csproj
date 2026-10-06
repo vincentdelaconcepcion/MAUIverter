@@ -57,11 +57,17 @@
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
-		<MauiImage Remove="Resources\Images\c.gif" />
-		<!-- c.gif must keep its exact filename, so keep it out of MauiImage
-		     (which rewrites it to c.scale-100.gif on Windows) and add it as an asset.
-		     LogicalName must match the Source value used in XAML. -->
-		<MauiAsset Include="Resources\Images\c.gif" LogicalName="c.gif" />
+
+		<!-- Android/iOS resolve MauiImage files through drawable/bundle resources.
+		     Windows unpackaged has NO *.scale-100 qualifier probing, so MauiImage there
+		     renders blank. For the Windows TFM only, drop them and deploy the exact
+		     filename as a MauiAsset instead. -->
+		<MauiImage Remove="Resources\Images\*.png" Condition="$(TargetFramework.Contains('windows10.0'))" />
+		<MauiImage Remove="Resources\Images\*.gif" Condition="$(TargetFramework.Contains('windows10.0'))" />
+
+		<MauiAsset Include="Resources\Images\*.png" Exclude="Resources\Images\dotnet_bot.png"
+		           LogicalName="%(Filename)%(Extension)" Condition="$(TargetFramework.Contains('windows10.0'))" />
+		<MauiAsset Include="Resources\Images\*.gif" LogicalName="%(Filename)%(Extension)" Condition="$(TargetFramework.Contains('windows10.0'))" />
 		
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />

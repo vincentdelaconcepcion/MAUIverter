@@ -25,7 +25,6 @@
             <Setter Property="FontSize" Value="13"/>
         </Style>
 
-        <!-- Swap the inner Label for <Image Source="yourfile.png"/> when you add the art -->
         <Style x:Key="ImagePlaceholder" TargetType="Border">
             <Setter Property="StrokeShape" Value="RoundRectangle 12"/>
             <Setter Property="Stroke" Value="#FF9AA5B1"/>
@@ -37,11 +36,11 @@
             <Setter Property="VerticalOptions" Value="Center"/>
         </Style>
 
-        <Style x:Key="PlaceholderText" TargetType="Label">
-            <Setter Property="Text" Value="image"/>
-            <Setter Property="FontSize" Value="11"/>
-            <Setter Property="TextColor" Value="#FF9AA5B1"/>
-            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Style x:Key="SlotImage" TargetType="Image">
+            <Setter Property="Aspect" Value="AspectFit"/>
+            <Setter Property="HeightRequest" Value="52"/>
+            <Setter Property="WidthRequest" Value="52"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
             <Setter Property="VerticalOptions" Value="Center"/>
         </Style>
     </ContentPage.Resources>
@@ -57,7 +56,7 @@
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Convert FROM" Style="{StaticResource BoxTitle}"/>
                     <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
-                        <Border Style="{StaticResource ImagePlaceholder}"><Label Style="{StaticResource PlaceholderText}"/></Border>
+                        <Border Style="{StaticResource ImagePlaceholder}"><Image Source="calculator.png" Style="{StaticResource SlotImage}"/></Border>
                         <Picker Grid.Column="1" x:Name="FromPicker" FontSize="21" TextColor="#FF1F2933"
                                 Title="Pick a unit" TitleColor="#FF9AA5B1" VerticalOptions="Center"
                                 SelectedIndexChanged="OnUnitChanged"/>
@@ -70,7 +69,7 @@
                 <VerticalStackLayout Spacing="10">
                     <Label Text="How Much?" Style="{StaticResource BoxTitle}"/>
                     <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
-                        <Border Style="{StaticResource ImagePlaceholder}"><Label Style="{StaticResource PlaceholderText}"/></Border>
+                        <Border Style="{StaticResource ImagePlaceholder}"><Image Source="calculator.png" Style="{StaticResource SlotImage}"/></Border>
                         <Entry Grid.Column="1" x:Name="ValueEntry" FontSize="30" TextColor="#FF1F2933"
                                Placeholder="0" PlaceholderColor="#FF9AA5B1" Keyboard="Numeric"
                                HorizontalTextAlignment="Center" VerticalOptions="Center"
@@ -84,7 +83,7 @@
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Convert To" Style="{StaticResource BoxTitle}"/>
                     <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
-                        <Border Style="{StaticResource ImagePlaceholder}"><Label Style="{StaticResource PlaceholderText}"/></Border>
+                        <Border Style="{StaticResource ImagePlaceholder}"><Image Source="calculator.png" Style="{StaticResource SlotImage}"/></Border>
                         <Picker Grid.Column="1" x:Name="ToPicker" FontSize="21" TextColor="#FF1F2933"
                                 Title="Pick a unit" TitleColor="#FF9AA5B1" VerticalOptions="Center"
                                 SelectedIndexChanged="OnUnitChanged"/>
@@ -106,7 +105,7 @@
                     <Label x:Name="ResultLabel" FontSize="34" FontAttributes="Bold" TextColor="#FF1F2933"/>
                     <Grid ColumnDefinitions="*,Auto" ColumnSpacing="14">
                         <Label Grid.Column="0" x:Name="EquationLabel" FontSize="14" TextColor="#FF52606D" VerticalOptions="Center"/>
-                        <Border Grid.Column="1" Style="{StaticResource ImagePlaceholder}"><Label Style="{StaticResource PlaceholderText}"/></Border>
+                        <Border Grid.Column="1" Style="{StaticResource ImagePlaceholder}"><Image Source="monkeyconfetti.png" Style="{StaticResource SlotImage}"/></Border>
                     </Grid>
                 </VerticalStackLayout>
             </Border>
