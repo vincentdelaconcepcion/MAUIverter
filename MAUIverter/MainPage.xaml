@@ -46,14 +46,13 @@
         <VerticalStackLayout Spacing="0">
 
             <!--Header Panel of the Main Menu-->
-            <Border Stroke="#C49B33"
-                    StrokeThickness="2"
+            <Border 
                     StrokeShape="RoundRectangle 10,0,0,10"
                     Background="#2B0B98"
                     Padding="10">
                 <VerticalStackLayout VerticalOptions="Center" Spacing="6">
                     <Image Source="c.gif"/>
-                    <Label Text="MAUIverter" Style="{StaticResource HeaderLabel}"/>
+                    <Label Text="Friendly Conversion" Style="{StaticResource HeaderLabel}"/>
                     <Label Text="Pick what you want to measure!" Style="{StaticResource SubHeaderLabel}"/>
                 </VerticalStackLayout>
             </Border>
@@ -64,7 +63,8 @@
                   ColumnSpacing="10"
                   RowSpacing="10"
                   Padding="10">
-
+                
+                <!--Information Category-->
                 <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource Size}">
                     <Border BackgroundColor="#FF3B82F6" StrokeShape="RoundRectangle 22" Padding="6">
                         <VerticalStackLayout VerticalOptions="Center" Spacing="6">
