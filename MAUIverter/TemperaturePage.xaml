@@ -6,74 +6,139 @@
              BackgroundColor="#FFF4F6FB">
 
     <ContentPage.Resources>
-        <Style x:Key="StepLabel" TargetType="Label">
-            <Setter Property="TextColor" Value="#FF52606D"/>
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="FontAttributes" Value="Bold"/>
-        </Style>
-
-        <Style x:Key="Card" TargetType="Border">
+        <Style x:Key="Box" TargetType="Border">
             <Setter Property="StrokeShape" Value="RoundRectangle 18"/>
-            <Setter Property="Padding" Value="14,12"/>
+            <Setter Property="Padding" Value="16,14"/>
             <Setter Property="Stroke" Value="#FFDCE3EC"/>
             <Setter Property="StrokeThickness" Value="1"/>
             <Setter Property="BackgroundColor" Value="White"/>
         </Style>
+
+        <Style x:Key="BoxTitle" TargetType="Label">
+            <Setter Property="TextColor" Value="#FFEF4444"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="Hint" TargetType="Label">
+            <Setter Property="TextColor" Value="#FF52606D"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+        <Style x:Key="ImagePlaceholder" TargetType="Border">
+            <Setter Property="StrokeShape" Value="RoundRectangle 12"/>
+            <Setter Property="Stroke" Value="#FF9AA5B1"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+            <Setter Property="StrokeDashArray" Value="5,3"/>
+            <Setter Property="BackgroundColor" Value="#FFEDEFF5"/>
+            <Setter Property="HeightRequest" Value="64"/>
+            <Setter Property="WidthRequest" Value="64"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+
+        <Style x:Key="SlotImage" TargetType="Image">
+            <Setter Property="Aspect" Value="AspectFit"/>
+            <Setter Property="HeightRequest" Value="52"/>
+            <Setter Property="WidthRequest" Value="52"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+
+        <Style x:Key="AnswerImage" TargetType="Image">
+            <Setter Property="Aspect" Value="AspectFit"/>
+            <Setter Property="HeightRequest" Value="102"/>
+            <Setter Property="WidthRequest" Value="102"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
     </ContentPage.Resources>
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="12">
+        <VerticalStackLayout Spacing="14" Padding="20">
 
             <Button Style="{StaticResource BackButton}" Clicked="OnBackClicked"/>
-            <Label Text="Temperature Converter" FontSize="30" FontAttributes="Bold" TextColor="#FF1F2933"/>
-            <Label Text="How hot or cold is it?" FontSize="16" TextColor="#FF52606D" Margin="0,0,0,8"/>
+            <Label Text="Temperature Converter" FontSize="28" FontAttributes="Bold" TextColor="#FF1F2933"/>
+            <Label Text="How hot or cold is it?" FontSize="15" TextColor="#FF52606D" Margin="0,0,0,4"/>
 
-            <Label Text="1. What are you converting FROM?" Style="{StaticResource StepLabel}"/>
-            <Border Style="{StaticResource Card}">
-                <Picker x:Name="FromPicker" FontSize="22" TextColor="#FF1F2933"
-                        Title="Pick a unit"
-                        SelectedIndexChanged="OnUnitChanged"/>
-            </Border>
-
-            <Label Text="2. How much?" Style="{StaticResource StepLabel}" Margin="0,6,0,0"/>
-            <Border Style="{StaticResource Card}">
-                <Entry x:Name="ValueEntry" FontSize="30" TextColor="#FF1F2933"
-                       Placeholder="0" PlaceholderColor="#FF9AA5B1"
-                       Keyboard="Numeric" HorizontalTextAlignment="Center"
-                       TextChanged="OnValueTextChanged"/>
-            </Border>
-
-            <Button Text="Swap units" Clicked="OnSwapClicked"
-                    BackgroundColor="White" TextColor="#FFEF4444"
-                    BorderColor="#FFEF4444" BorderWidth="2"
-                    CornerRadius="16" FontSize="18" FontAttributes="Bold"
-                    HeightRequest="50" Margin="0,4,0,0"/>
-
-            <Label Text="3. Convert it TO" Style="{StaticResource StepLabel}" Margin="0,6,0,0"/>
-            <Border Style="{StaticResource Card}">
-                <Picker x:Name="ToPicker" FontSize="22" TextColor="#FF1F2933"
-                        Title="Pick a unit"
-                        SelectedIndexChanged="OnUnitChanged"/>
-            </Border>
-
-            <Button Text="Convert!" Clicked="OnConvertClicked"
-                    BackgroundColor="#FFEF4444" TextColor="White"
-                    CornerRadius="16" FontSize="20" FontAttributes="Bold"
-                    HeightRequest="56" Margin="0,4,0,0"/>
-
-            <Border x:Name="ResultCard" Margin="0,10,0,0" Padding="18"
-                    StrokeShape="RoundRectangle 20"
-                    Stroke="#FFEF4444" StrokeThickness="2"
-                    BackgroundColor="White">
-                <VerticalStackLayout Spacing="6">
-                    <Label x:Name="ResultLabel" FontSize="34" FontAttributes="Bold"
-                           TextColor="#FF1F2933" HorizontalTextAlignment="Center"/>
-                    <Label x:Name="EquationLabel" FontSize="15" TextColor="#FF52606D"
-                           HorizontalTextAlignment="Center"/>
+            <!-- 1. Convert FROM -->
+            <Border Style="{StaticResource Box}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Convert FROM" Style="{StaticResource BoxTitle}"/>
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                        <Border Style="{StaticResource ImagePlaceholder}"><Image Source="calculator.png" Style="{StaticResource SlotImage}"/></Border>
+                        <Picker Grid.Column="1" x:Name="FromPicker" FontSize="21" TextColor="#FF1F2933"
+                                Title="Pick a unit" TitleColor="#FF9AA5B1" VerticalOptions="Center"
+                                SelectedIndexChanged="OnUnitChanged"/>
+                    </Grid>
                 </VerticalStackLayout>
             </Border>
 
+            <!-- 2. How Much? -->
+            <Border Style="{StaticResource Box}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="How Much?" Style="{StaticResource BoxTitle}"/>
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                        <Border Style="{StaticResource ImagePlaceholder}"><Image Source="calculator.png" Style="{StaticResource SlotImage}"/></Border>
+                        <Entry Grid.Column="1" x:Name="ValueEntry" FontSize="30" TextColor="#FF1F2933"
+                               Placeholder="0" PlaceholderColor="#FF9AA5B1" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" VerticalOptions="Center"
+                               TextChanged="OnValueTextChanged"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
 
+            <!-- 3. Convert To -->
+            <Border Style="{StaticResource Box}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Convert To" Style="{StaticResource BoxTitle}"/>
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                        <Border Style="{StaticResource ImagePlaceholder}"><Image Source="calculator.png" Style="{StaticResource SlotImage}"/></Border>
+                        <Picker Grid.Column="1" x:Name="ToPicker" FontSize="21" TextColor="#FF1F2933"
+                                Title="Pick a unit" TitleColor="#FF9AA5B1" VerticalOptions="Center"
+                                SelectedIndexChanged="OnUnitChanged"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Swap units" Clicked="OnSwapClicked" BackgroundColor="White" TextColor="#FFEF4444"
+                    BorderColor="#FFEF4444" BorderWidth="2" CornerRadius="16" FontSize="17"
+                    FontAttributes="Bold" HeightRequest="50"/>
+
+            <Button Text="Convert!" Clicked="OnConvertClicked" BackgroundColor="#FFEF4444" TextColor="White"
+                    CornerRadius="16" FontSize="19" FontAttributes="Bold" HeightRequest="56"/>
+
+            <!-- Your Answer! -->
+            <Border x:Name="ResultCard" Style="{StaticResource Box}" Stroke="#FFEF4444" StrokeThickness="2" Margin="0,6,0,0">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Your Answer!" TextColor="#FFEF4444" FontSize="17" FontAttributes="Bold"/>
+                    <Label x:Name="ResultLabel" FontSize="34" FontAttributes="Bold" TextColor="#FF1F2933"/>
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="14">
+                        <Label Grid.Column="0" x:Name="EquationLabel" FontSize="14" TextColor="#FF52606D" VerticalOptions="Center"/>
+                        <Border Grid.Column="1" Style="{StaticResource ImagePlaceholder}"><Image Source="thermometermonkey.png" Style="{StaticResource AnswerImage}"/></Border>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Comparison -->
+            <Border Style="{StaticResource Box}">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Comparison" Style="{StaticResource BoxTitle}"/>
+                    <Label Text="The longer bar is the bigger unit." Style="{StaticResource Hint}"/>
+                    <Label x:Name="FromSizeLabel" FontSize="15" FontAttributes="Bold" TextColor="#FF1F2933" Margin="0,6,0,0"/>
+                    <ProgressBar x:Name="FromSizeBar" ProgressColor="#FFEF4444" HeightRequest="18"/>
+                    <Label x:Name="ToSizeLabel" FontSize="15" FontAttributes="Bold" TextColor="#FF1F2933" Margin="0,8,0,0"/>
+                    <ProgressBar x:Name="ToSizeBar" ProgressColor="#FF94A3B8" HeightRequest="18"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Did you know? -->
+            <Border Style="{StaticResource Box}">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Did you know?" Style="{StaticResource BoxTitle}"/>
+                    <Label Text="Water boils at 100 °C and freezes at 0 °C at sea level — the Celsius scale was built around water."
+                           Style="{StaticResource Hint}"/>
+                </VerticalStackLayout>
+            </Border>
 
         </VerticalStackLayout>
     </ScrollView>
