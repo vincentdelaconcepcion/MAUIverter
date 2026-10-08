@@ -46,9 +46,20 @@
 
         <Style x:Key="AnswerImage" TargetType="Image">
             <Setter Property="Aspect" Value="AspectFit"/>
-            <Setter Property="HeightRequest" Value="102"/>
-            <Setter Property="WidthRequest" Value="102"/>
+            <Setter Property="HeightRequest" Value="120"/>
+            <Setter Property="WidthRequest" Value="120"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+
+        <Style x:Key="AnswerPlaceholder" TargetType="Border">
+            <Setter Property="StrokeShape" Value="RoundRectangle 12"/>
+            <Setter Property="Stroke" Value="#FF9AA5B1"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+            <Setter Property="StrokeDashArray" Value="5,3"/>
+            <Setter Property="BackgroundColor" Value="#FFEDEFF5"/>
+            <Setter Property="HeightRequest" Value="132"/>
+            <Setter Property="WidthRequest" Value="132"/>
             <Setter Property="VerticalOptions" Value="Center"/>
         </Style>
     </ContentPage.Resources>
@@ -114,7 +125,7 @@
                     <Label x:Name="ResultLabel" FontSize="34" FontAttributes="Bold" TextColor="#FF1F2933"/>
                     <Grid ColumnDefinitions="*,Auto" ColumnSpacing="14">
                         <Label Grid.Column="0" x:Name="EquationLabel" FontSize="14" TextColor="#FF52606D" VerticalOptions="Center"/>
-                        <Border Grid.Column="1" Style="{StaticResource ImagePlaceholder}"><Image Source="thermometermonkey.png" Style="{StaticResource AnswerImage}"/></Border>
+                        <Border Grid.Column="1" Style="{StaticResource AnswerPlaceholder}"><Image Source="thermometermonkey.png" Style="{StaticResource AnswerImage}"/></Border>
                     </Grid>
                 </VerticalStackLayout>
             </Border>
