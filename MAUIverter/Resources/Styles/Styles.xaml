@@ -48,6 +48,19 @@
         </Setter>
     </Style>
 
+    <!-- Custom back button for category pages (navigation bar is hidden) -->
+    <Style x:Key="BackButton" TargetType="Button">
+        <Setter Property="Text" Value="&#x2039; Back"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextColor" Value="#FF3B82F6"/>
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HeightRequest" Value="44"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="Padding" Value="4,0"/>
+    </Style>
+
     <Style TargetType="CheckBox">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
         <Setter Property="MinimumHeightRequest" Value="44"/>

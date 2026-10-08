@@ -16,6 +16,9 @@ namespace MAUIverter
             ValueEntry.Text = "0";
         }
 
+        private async void OnBackClicked(object? sender, EventArgs e)
+            => await Navigation.PopAsync();
+
         private void OnValueTextChanged(object? sender, TextChangedEventArgs e)
             => UpdateResult();
 

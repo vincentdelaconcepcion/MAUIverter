@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUIverter.MainPage"
              BackgroundColor="#FFF4F6FB"
-             Title="MAUIverter">
+             NavigationPage.HasNavigationBar="False">
 
     <!--Explicit Styles-->
     <ContentPage.Resources>
@@ -53,12 +53,12 @@
 
             <!--Header Panel of the Main Menu-->
             <Border 
-                    StrokeShape="RoundRectangle 10,0,0,10"
-                    Background="#2B0B98"
+                    StrokeShape="RoundRectangle 0,0,0,0"
+                    Background="#8262EE"
                     Padding="10">
                 <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                    <Image Source="c.gif" HeightRequest="110" WidthRequest="110"/>
-                    <Label Text="Friendly Conversion" Style="{StaticResource HeaderLabel}"/>
+                    <Image Source="c.gif" IsAnimationPlaying="True" HeightRequest="110" WidthRequest="110"/>
+                    <Label Text="All in one Converter" Style="{StaticResource HeaderLabel}"/>
                     <Label Text="Pick what you want to measure!" Style="{StaticResource SubHeaderLabel}"/>
                 </VerticalStackLayout>
             </Border>
@@ -74,7 +74,7 @@
                 <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource Size}">
                     <Border BackgroundColor="#FF3B82F6" StrokeShape="RoundRectangle 22" Padding="6">
                         <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                            <Image Source="informationmonkey.png" Style="{StaticResource TileImage}"/>
+                            <Image Source="information.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
                             <Label Text="Information" Style="{StaticResource CategoryLabel}"/>
                         </VerticalStackLayout>
                     </Border>
@@ -86,7 +86,7 @@
                 <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource Size}">
                     <Border BackgroundColor="#FF14B8A6" StrokeShape="RoundRectangle 22" Padding="6">
                         <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                            <Image Source="monkeyvolume.png" Style="{StaticResource TileImage}"/>
+                            <Image Source="volume.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
                             <Label Text="Volume" Style="{StaticResource CategoryLabel}"/>
                         </VerticalStackLayout>
                     </Border>
@@ -98,7 +98,7 @@
                 <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource Size}">
                     <Border BackgroundColor="#FF8B5CF6" StrokeShape="RoundRectangle 22" Padding="6">
                         <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                            <Image Source="lengthmoneky.png" Style="{StaticResource TileImage}"/>
+                            <Image Source="length.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
                             <Label Text="Length" Style="{StaticResource CategoryLabel}"/>
                         </VerticalStackLayout>
                     </Border>
@@ -110,7 +110,7 @@
                 <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource Size}">
                     <Border BackgroundColor="#FFEA580C" StrokeShape="RoundRectangle 22" Padding="6">
                         <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                            <Image Source="monkeymass.png" Style="{StaticResource TileImage}"/>
+                            <Image Source="mass.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
                             <Label Text="Mass" Style="{StaticResource CategoryLabel}"/>
                         </VerticalStackLayout>
                     </Border>
@@ -122,7 +122,7 @@
                 <Grid Grid.Row="2" Grid.Column="0" Style="{StaticResource Size}">
                     <Border BackgroundColor="#FFEF4444" StrokeShape="RoundRectangle 22" Padding="6">
                         <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                            <Image Source="thermometermonkey.png" Style="{StaticResource TileImage}"/>
+                            <Image Source="temperature.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
                             <Label Text="Temperature" Style="{StaticResource CategoryLabel}"/>
                         </VerticalStackLayout>
                     </Border>
@@ -134,7 +134,7 @@
                 <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource Size}">
                     <Border BackgroundColor="#FFD97706" StrokeShape="RoundRectangle 22" Padding="6">
                         <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                            <Image Source="monkeyenergy.png" Style="{StaticResource TileImage}"/>
+                            <Image Source="energy.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
                             <Label Text="Energy" Style="{StaticResource CategoryLabel}"/>
                         </VerticalStackLayout>
                     </Border>
@@ -146,7 +146,7 @@
                 <Grid Grid.Row="3" Grid.Column="0" Style="{StaticResource Size}">
                     <Border BackgroundColor="#FF10B981" StrokeShape="RoundRectangle 22" Padding="6">
                         <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                            <Image Source="monkeyarea.png" Style="{StaticResource TileImage}"/>
+                            <Image Source="area.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
                             <Label Text="Area" Style="{StaticResource CategoryLabel}"/>
                         </VerticalStackLayout>
                     </Border>
@@ -158,7 +158,7 @@
                 <Grid Grid.Row="3" Grid.Column="1" Style="{StaticResource Size}">
                     <Border BackgroundColor="#FFEC4899" StrokeShape="RoundRectangle 22" Padding="6">
                         <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                            <Image Source="speedmonkey.png" Style="{StaticResource TileImage}"/>
+                            <Image Source="speed.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
                             <Label Text="Speed" Style="{StaticResource CategoryLabel}"/>
                         </VerticalStackLayout>
                     </Border>
@@ -170,7 +170,7 @@
                 <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Size}">
                     <Border BackgroundColor="#FF6366F1" StrokeShape="RoundRectangle 22" Padding="6">
                         <VerticalStackLayout VerticalOptions="Center" Spacing="6">
-                            <Image Source="timemonkey.png" Style="{StaticResource TileImage}"/>
+                            <Image Source="duration.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
                             <Label Text="Duration" Style="{StaticResource CategoryLabel}"/>
                         </VerticalStackLayout>
                     </Border>

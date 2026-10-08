@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUIverter.MassPage"
-             Title="Mass"
+             NavigationPage.HasNavigationBar="False"
              BackgroundColor="#FFF4F6FB">
 
     <ContentPage.Resources>
@@ -24,6 +24,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="12">
 
+            <Button Style="{StaticResource BackButton}" Clicked="OnBackClicked"/>
             <Label Text="Mass Converter" FontSize="30" FontAttributes="Bold" TextColor="#FF1F2933"/>
             <Label Text="How heavy is it?" FontSize="16" TextColor="#FF52606D" Margin="0,0,0,8"/>
 
