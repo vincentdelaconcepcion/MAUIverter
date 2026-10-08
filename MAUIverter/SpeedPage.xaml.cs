@@ -20,10 +20,12 @@ namespace MAUIverter
             => await Navigation.PopAsync();
 
         private void OnValueTextChanged(object? sender, TextChangedEventArgs e)
-            => UpdateResult();
+        {
+        }
 
         private void OnUnitChanged(object? sender, EventArgs e)
-            => UpdateResult();
+        {
+        }
 
         private async void OnConvertClicked(object? sender, EventArgs e)
         {
@@ -31,7 +33,7 @@ namespace MAUIverter
             await PopResultAsync();
         }
 
-        private async void OnSwapClicked(object? sender, EventArgs e)
+        private void OnSwapClicked(object? sender, EventArgs e)
         {
             if (FromPicker.SelectedIndex < 0 || ToPicker.SelectedIndex < 0)
                 return;
@@ -39,9 +41,6 @@ namespace MAUIverter
             int fromIndex = FromPicker.SelectedIndex;
             FromPicker.SelectedIndex = ToPicker.SelectedIndex;
             ToPicker.SelectedIndex = fromIndex;
-
-            UpdateResult();
-            await PopResultAsync();
         }
 
         private async Task PopResultAsync()
