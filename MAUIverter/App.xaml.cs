@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MAUIverter.View;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MAUIverter
 {

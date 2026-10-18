@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIverter.View.MainPage"
+             BackgroundColor="#FFF4F6FB"
+             NavigationPage.HasNavigationBar="False">
+
+    <!--Explicit Styles-->
+    <ContentPage.Resources>
+        <Style x:Key="HeaderLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="SubHeaderLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="#CFC0F5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,2,0,0"/>
+        </Style>
+
+        <Style x:Key="CategoryLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="LineBreakMode" Value="WordWrap"/>
+        </Style>
+
+        <Style x:Key="TileButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="BorderWidth" Value="500"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+        <Style x:Key="Size" TargetType="Grid">
+            <Setter Property="HeightRequest" Value="160"/>
+        </Style>
+
+        <Style x:Key="TileImage" TargetType="Image">
+            <Setter Property="HeightRequest" Value="86"/>
+            <Setter Property="WidthRequest" Value="86"/>
+            <Setter Property="Aspect" Value="AspectFit"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <!--Single ScrollView so the header scrolls away with the tiles-->
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+            <!--Header Panel of the Main Menu-->
+            <Border 
+                    StrokeShape="RoundRectangle 0,0,0,0"
+                    Background="#8262EE"
+                    Padding="10">
+                <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                    <Image Source="calculator.png" HeightRequest="110" WidthRequest="110"/>
+                    <Label Text="Monkey Verter" Style="{StaticResource HeaderLabel}"/>
+                    <Label Text="Pick what you want to measure!" Style="{StaticResource SubHeaderLabel}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!--Selection Panels-->
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                  ColumnDefinitions="*,*"
+                  ColumnSpacing="10"
+                  RowSpacing="10"
+                  Padding="10">
+
+                <!--Information Category-->
+                <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FF3B82F6" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="information.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
+                            <Label Text="Information" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Information"
+                            Clicked="OnInformationClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FF14B8A6" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="volume.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
+                            <Label Text="Volume" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Volume"
+                            Clicked="OnVolumeClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FF8B5CF6" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="length.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
+                            <Label Text="Length" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Length"
+                            Clicked="OnLengthClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FFEA580C" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="mass.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
+                            <Label Text="Mass" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Mass"
+                            Clicked="OnMassClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="0" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FFEF4444" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="temperature.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
+                            <Label Text="Temperature" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Temperature"
+                            Clicked="OnTemperatureClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FFD97706" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="energy.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
+                            <Label Text="Energy" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Energy"
+                            Clicked="OnEnergyClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="3" Grid.Column="0" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FF10B981" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="area.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
+                            <Label Text="Area" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Area"
+                            Clicked="OnAreaClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="3" Grid.Column="1" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FFEC4899" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="speed.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
+                            <Label Text="Speed" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Speed"
+                            Clicked="OnSpeedClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Size}">
+                    <Border BackgroundColor="#FF6366F1" StrokeShape="RoundRectangle 22" Padding="6">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="duration.gif" IsAnimationPlaying="True" Style="{StaticResource TileImage}"/>
+                            <Label Text="Duration" Style="{StaticResource CategoryLabel}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Style="{StaticResource TileButton}"
+                            SemanticProperties.Description="Duration"
+                            Clicked="OnDurationClicked"/>
+                </Grid>
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
