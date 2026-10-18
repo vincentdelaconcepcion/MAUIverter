@@ -13,18 +13,21 @@ namespace MAUIverter.Model
         public static List<DurationUnit> Units { get; } = new()
         {
             new("Nanosecond", "ns", 0.000000001d),
-            new("Microsecond", "µs", 0.000001d),
+            new("Microsecond", "\u00B5s", 0.000001d),
             new("Millisecond", "ms", 0.001d),
             Second,
             Minute,
             new("Hour", "h", 3600d),
             new("Day", "d", 86400d),
             new("Week", "wk", 604800d),
+            new("Fortnight", "fn", 1209600d),
             new("Month (average)", "mo", 2629800d),
             new("Year (365 days)", "yr", 31536000d),
-            new("Year (365.25 days)", "yr", 31557600d),
+            new("Year (365.2425 days, Gregorian)", "yr", 31556952d),
+            new("Year (365.25 days, Julian)", "yr", 31557600d),
             new("Decade", "dec", 315576000d),
             new("Century", "cent", 3155760000d),
+            new("Millennium", "kyr", 31557600000d),
         };
 
         public static List<string> UnitNames { get; } = Units.ConvertAll(unit => unit.ToString());

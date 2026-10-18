@@ -155,6 +155,6 @@ namespace MAUIverter.ViewModel
         }
 
         private static string Format(double value)
-            => value.ToString("G6", CultureInfo.CurrentCulture);
+            => value.ToString("G15", CultureInfo.CurrentCulture);
     }
 }

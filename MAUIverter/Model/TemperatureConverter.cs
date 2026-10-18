@@ -13,13 +13,13 @@ namespace MAUIverter.Model
     {
         public static TemperatureUnit Celsius { get; } = new(
             "Celsius",
-            "°C",
+            "\u00B0C",
             celsius => celsius,
             celsius => celsius);
 
         public static TemperatureUnit Fahrenheit { get; } = new(
             "Fahrenheit",
-            "°F",
+            "\u00B0F",
             fahrenheit => (fahrenheit - 32d) * 5d / 9d,
             celsius => celsius * 9d / 5d + 32d);
 
@@ -31,7 +31,7 @@ namespace MAUIverter.Model
 
         public static TemperatureUnit Rankine { get; } = new(
             "Rankine",
-            "°R",
+            "\u00B0R",
             rankine => rankine * 5d / 9d - 273.15d,
             celsius => (celsius + 273.15d) * 9d / 5d);
 

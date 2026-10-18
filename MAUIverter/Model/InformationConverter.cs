@@ -24,6 +24,12 @@ namespace MAUIverter.Model
             new("Tebibit", "Tibit", 1_099_511_627_776d),
             new("Petabit", "Pbit", 1_000_000_000_000_000d),
             new("Pebibit", "Pibit", 1_125_899_906_842_624d),
+            new("Exabit", "Ebit", 1_000_000_000_000_000_000d),
+            new("Exbibit", "Eibit", 1_152_921_504_606_846_976d),
+            new("Zettabit", "Zbit", 1_000_000_000_000_000_000_000d),
+            new("Zebibit", "Zibit", 1_180_591_620_717_411_303_424d),
+            new("Yottabit", "Ybit", 1_000_000_000_000_000_000_000_000d),
+            new("Yobibit", "Yibit", 1_208_925_819_614_629_174_706_176d),
             new("Kilobyte", "kB", 8_000d),
             new("Kibibyte", "KiB", 8_192d),
             Megabyte,
@@ -34,6 +40,12 @@ namespace MAUIverter.Model
             new("Tebibyte", "TiB", 8_796_093_022_208d),
             new("Petabyte", "PB", 8_000_000_000_000_000d),
             new("Pebibyte", "PiB", 9_007_199_254_740_992d),
+            new("Exabyte", "EB", 8_000_000_000_000_000_000d),
+            new("Exbibyte", "EiB", 9_223_372_036_854_775_808d),
+            new("Zettabyte", "ZB", 8_000_000_000_000_000_000_000d),
+            new("Zebibyte", "ZiB", 9_444_732_965_739_290_427_392d),
+            new("Yottabyte", "YB", 8_000_000_000_000_000_000_000_000d),
+            new("Yobibyte", "YiB", 9_671_406_556_917_033_397_649_408d),
         };
 
         public static List<string> UnitNames { get; } = Units.ConvertAll(unit => unit.ToString());
