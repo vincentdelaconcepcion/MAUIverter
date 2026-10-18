@@ -58,7 +58,7 @@
                     Padding="10">
                 <VerticalStackLayout VerticalOptions="Center" Spacing="6">
                     <Image Source="c.gif" IsAnimationPlaying="True" HeightRequest="110" WidthRequest="110"/>
-                    <Label Text="All in one Converter" Style="{StaticResource HeaderLabel}"/>
+                    <Label Text="Happy Converter" Style="{StaticResource HeaderLabel}"/>
                     <Label Text="Pick what you want to measure!" Style="{StaticResource SubHeaderLabel}"/>
                 </VerticalStackLayout>
             </Border>
